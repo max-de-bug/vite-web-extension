@@ -11,9 +11,11 @@
     "build": "vite build --config vite.config.chrome.ts",
     "build:chrome": "vite build --config vite.config.chrome.ts",
     "build:firefox": "vite build --config vite.config.firefox.ts",
-    "dev": "nodemon --config nodemon.chrome.json",
+    "dev": "concurrently \"npm run dev:chrome\" \"npm run dev:api\"",
     "dev:chrome": "nodemon --config nodemon.chrome.json",
-    "dev:firefox": "nodemon --config nodemon.firefox.json"
+    "dev:firefox": "nodemon --config nodemon.firefox.json",
+    "dev:next": "next dev",
+    "dev:api": "set PYTHONIOENCODING=utf-8 && cd fastApi-backend && fastapi dev main.py"
   },
   "type": "module",
   "dependencies": {
@@ -33,6 +35,7 @@
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.18.0",
     "@vitejs/plugin-react": "^4.5.0",
+    "concurrently": "^8.2.2",
     "eslint": "^9.27.0",
     "eslint-config-prettier": "^10.1.2",
     "eslint-plugin-import": "^2.31.0",

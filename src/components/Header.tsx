@@ -15,7 +15,7 @@ const Header = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        Learn React!
+        New shiny tool!
       </a>
       <p>Popup styled with TailwindCSS!</p>
     </header>
